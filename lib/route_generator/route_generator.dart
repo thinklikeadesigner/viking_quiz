@@ -27,8 +27,8 @@ class RouteGenerator {
       case '/choosebuddy':
         return MaterialPageRoute(builder: (_) => ChooseBuddy());
       case '/chooseactivity':
-        return MaterialPageRoute(builder: (_) => ChooseActivity());
-      case '/milonamepicked':
+        //   return MaterialPageRoute(builder: (_) => ChooseActivity());
+        // case '/milonamepicked':
         return MaterialPageRoute(builder: (_) => MiloNamePicked());
       case '/skynamepicked':
         return MaterialPageRoute(builder: (_) => SkyNamePicked());

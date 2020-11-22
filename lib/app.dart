@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:navigationapp/route_generator/route_generator.dart';
 import 'package:preview/preview.dart';
+
 import 'screens/first_page.dart';
+import 'package:flutter/material.dart';
 
 const primaryTeal = const Color((0xff30D4D4));
 const purpleMessage = const Color(0xff79227B);
@@ -12,6 +13,7 @@ class App extends StatelessWidget with Previewer {
     return MaterialApp(
       title: 'Navigation Demo',
       theme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
         // Define the default brightness and colors.
         brightness: Brightness.light,
         primaryColor: primaryTeal,
