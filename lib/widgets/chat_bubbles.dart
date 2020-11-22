@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:navigationapp/app.dart';
+import 'package:navigationapp/models/viking_quiz_model.dart';
+
+final VikingQuizModel model = VikingQuizModel();
 
 firstChatBubble(CustomClipper clipper, BuildContext context) => ChatBubble(
       clipper: clipper,
@@ -146,11 +149,15 @@ pickActivityBubble(CustomClipper clipper, BuildContext context) => ChatBubble(
       margin: EdgeInsets.only(top: 5),
       child: Container(
         constraints: BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width * 0.4,
+          maxWidth: MediaQuery.of(context).size.width * 0.45,
         ),
         child: Text(
-          " Your interests will help me decide what fun suggestions I should give every week!  ",
-          style: TextStyle(color: Colors.black),
+          model.getQuestionText(),
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 18.0,
+            color: Colors.blueGrey,
+          ),
         ),
       ),
     );
