@@ -1,28 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/bubble_type.dart';
-import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_2.dart';
 import 'package:navigationapp/models/viking_quiz_model.dart';
 import 'package:navigationapp/widgets/chat_bubbles.dart';
-
-pickActivityBubble(CustomClipper clipper, BuildContext context) => ChatBubble(
-      clipper: clipper,
-      backGroundColor: Color(0xffE7E7ED),
-      margin: EdgeInsets.only(top: 5),
-      child: Container(
-        constraints: BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width * 0.45,
-        ),
-        child: Text(
-          model.getQuestionText(),
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 18.0,
-            color: Colors.blueGrey,
-          ),
-        ),
-      ),
-    );
 
 class QuizHomeView extends StatefulWidget {
   QuizHomeView({Key key, this.title}) : super(key: key);
@@ -77,7 +57,7 @@ class _MyHomePageState extends State<QuizHomeView> {
       backgroundColor: Colors.grey.shade900,
       appBar: AppBar(
         title: Text(widget.title),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color(0xff548FF7),
       ),
       body: Center(
         child: Column(
@@ -85,30 +65,72 @@ class _MyHomePageState extends State<QuizHomeView> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Card(
-              color: Colors.blueGrey,
+              color: Color(0xff252525),
               child: Row(
                 children: [
                   Container(
                     margin: const EdgeInsets.fromLTRB(20, 48, 20, 20),
-                    child: Image(image: AssetImage("dassh.png"), height: 120),
+                    child: Image(image: AssetImage("dash.png"), height: 120),
                   ),
-                  pickActivityBubble(
-                      ChatBubbleClipper2(type: BubbleType.receiverBubble),
-                      context),
+                  Stack(
+                    children: <Widget>[
+                      pickActivityBubble(
+                          ChatBubbleClipper2(type: BubbleType.receiverBubble),
+                          context),
+                      Column(
+                        children: <Widget>[
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            children: <Widget>[
+                              SizedBox(
+                                width: 20.0,
+                                height: 30.0,
+                              ),
+                              Container(
+                                width: 200,
+                                height: 100,
+                                color: Colors.transparent,
+                                child: Text(
+                                  model.getQuestionText(),
+                                  // textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 ],
               ),
             ),
-            Expanded(
-              flex: 5,
-              child: Padding(
-                padding: EdgeInsets.all(10.0),
-              ),
-            ),
+            // Expanded(
+            //   flex: 5,
+            //   child: Padding(
+            //     padding: EdgeInsets.all(10.0),
+            //     child: Center(
+            //       child: Text(
+            //         model.getQuestionText(),
+            //         textAlign: TextAlign.center,
+            //         style: TextStyle(
+            //           fontSize: 25.0,
+            //           color: Colors.white70,
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
             Expanded(
               child: Padding(
                 padding: EdgeInsets.all(15.0),
                 child: FlatButton(
-                  color: Colors.deepPurpleAccent,
+                  color: Color(0xff548FF7),
                   child: Text(
                     'True',
                     style: TextStyle(
@@ -127,7 +149,7 @@ class _MyHomePageState extends State<QuizHomeView> {
               child: Padding(
                 padding: EdgeInsets.all(15.0),
                 child: FlatButton(
-                  color: Colors.deepPurpleAccent,
+                  color: Color(0xff548FF7),
                   child: Text(
                     'False',
                     style: TextStyle(

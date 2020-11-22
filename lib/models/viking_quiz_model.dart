@@ -54,3 +54,12 @@ class VikingQuizModel {
     _questionNumber = 0;
   }
 }
+
+// Stack(
+//                   children: <Widget>[
+//                     pickActivityBubble(
+//                     ChatBubbleClipper2(type: BubbleType.receiverBubble),
+//                     context),
+//                     Text('hi', style: (TextStyle(color: Colors.white))),
+//                   ],
+//                 ),
