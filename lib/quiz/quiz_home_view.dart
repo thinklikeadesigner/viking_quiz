@@ -80,27 +80,14 @@ class _MyHomePageState extends State<QuizHomeView> {
                 ],
               ),
             ),
-            // Expanded(
-            //   flex: 5,
-            //   child: Padding(
-            //     padding: EdgeInsets.all(10.0),
-            //     child: Center(
-            //       child: Text(
-            //         model.getQuestionText(),
-            //         textAlign: TextAlign.center,
-            //         style: TextStyle(
-            //           fontSize: 25.0,
-            //           color: Colors.white70,
-            //         ),
-            //       ),
-            //     ),
-            //   ),
-            // ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.all(15.0),
+                padding: EdgeInsets.all(50.0),
                 child: FlatButton(
                   color: Color(0xff548FF7),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25.0),
+                  ),
                   child: Text(
                     'True',
                     style: TextStyle(
@@ -117,9 +104,11 @@ class _MyHomePageState extends State<QuizHomeView> {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.all(15.0),
+                padding: EdgeInsets.all(50.0),
                 child: FlatButton(
                   color: Color(0xff548FF7),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0)),
                   child: Text(
                     'False',
                     style: TextStyle(
