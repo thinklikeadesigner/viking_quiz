@@ -6,7 +6,7 @@ import 'package:navigationapp/widgets/chat_bubbles.dart';
 
 class QuizHomeView extends StatefulWidget {
   QuizHomeView({Key key, this.title}) : super(key: key);
-
+  final VikingQuizModel model = VikingQuizModel();
   final String title;
 
   @override
@@ -53,6 +53,7 @@ class _MyHomePageState extends State<QuizHomeView> {
   Widget build(BuildContext context) {
     print("model: ");
     print(model.getQuestionText());
+    var text = model.getQuestionText();
     return Scaffold(
       backgroundColor: Colors.grey.shade900,
       appBar: AppBar(
@@ -72,65 +73,21 @@ class _MyHomePageState extends State<QuizHomeView> {
                     margin: const EdgeInsets.fromLTRB(20, 48, 20, 20),
                     child: Image(image: AssetImage("dash.png"), height: 120),
                   ),
-                  Stack(
-                    children: <Widget>[
-                      pickActivityBubble(
-                          ChatBubbleClipper2(type: BubbleType.receiverBubble),
-                          context),
-                      Column(
-                        children: <Widget>[
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Row(
-                            children: <Widget>[
-                              SizedBox(
-                                width: 20.0,
-                                height: 30.0,
-                              ),
-                              Container(
-                                width: 200,
-                                height: 100,
-                                color: Colors.transparent,
-                                child: Text(
-                                  model.getQuestionText(),
-                                  // textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 15.0,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
+                  pickActivityBubble(
+                      ChatBubbleClipper2(type: BubbleType.receiverBubble),
+                      context,
+                      text),
                 ],
               ),
             ),
-            // Expanded(
-            //   flex: 5,
-            //   child: Padding(
-            //     padding: EdgeInsets.all(10.0),
-            //     child: Center(
-            //       child: Text(
-            //         model.getQuestionText(),
-            //         textAlign: TextAlign.center,
-            //         style: TextStyle(
-            //           fontSize: 25.0,
-            //           color: Colors.white70,
-            //         ),
-            //       ),
-            //     ),
-            //   ),
-            // ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.all(15.0),
+                padding: EdgeInsets.all(50.0),
                 child: FlatButton(
                   color: Color(0xff548FF7),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25.0),
+                  ),
                   child: Text(
                     'True',
                     style: TextStyle(
@@ -147,9 +104,11 @@ class _MyHomePageState extends State<QuizHomeView> {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.all(15.0),
+                padding: EdgeInsets.all(50.0),
                 child: FlatButton(
                   color: Color(0xff548FF7),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0)),
                   child: Text(
                     'False',
                     style: TextStyle(

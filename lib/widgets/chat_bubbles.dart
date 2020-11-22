@@ -3,9 +3,8 @@ import 'package:flutter_chat_bubble/chat_bubble.dart';
 
 import 'package:navigationapp/models/viking_quiz_model.dart';
 
-final VikingQuizModel model = VikingQuizModel();
-
-pickActivityBubble(CustomClipper clipper, BuildContext context) => ChatBubble(
+pickActivityBubble(CustomClipper clipper, BuildContext context, String text) =>
+    ChatBubble(
       clipper: clipper,
       backGroundColor: Color(0xffE7E7ED),
       margin: EdgeInsets.only(top: 5),
@@ -13,14 +12,7 @@ pickActivityBubble(CustomClipper clipper, BuildContext context) => ChatBubble(
         constraints: BoxConstraints(
           maxWidth: MediaQuery.of(context).size.width * 0.45,
         ),
-        child: Text(
-          model.getQuestionText(),
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 18.0,
-            color: Color(0xffE7E7ED),
-          ),
-        ),
+        child: Text(text),
       ),
     );
 
