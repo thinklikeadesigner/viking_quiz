@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_bubble/bubble_type.dart';
+import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_2.dart';
 import 'package:navigationapp/models/viking_quiz_model.dart';
+import 'package:navigationapp/widgets/chat_bubbles.dart';
 
 class QuizHomeView extends StatefulWidget {
   QuizHomeView({Key key, this.title}) : super(key: key);
@@ -61,6 +64,19 @@ class _MyHomePageState extends State<QuizHomeView> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            Card(
+              child: Row(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(20, 48, 20, 20),
+                    child: Image(image: AssetImage("panda.png"), height: 120),
+                  ),
+                  pickActivityBubble(
+                      ChatBubbleClipper2(type: BubbleType.receiverBubble),
+                      context),
+                ],
+              ),
+            ),
             Expanded(
               flex: 5,
               child: Padding(
