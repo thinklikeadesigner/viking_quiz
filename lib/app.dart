@@ -1,7 +1,7 @@
+import 'package:navigationapp/quiz/quiz_home_view.dart';
 import 'package:navigationapp/route_generator/route_generator.dart';
 import 'package:preview/preview.dart';
 
-import 'screens/first_page.dart';
 import 'package:flutter/material.dart';
 
 const primaryTeal = const Color((0xff30D4D4));
@@ -30,7 +30,7 @@ class App extends StatelessWidget with Previewer {
           bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
         ),
       ),
-      home: FirstPage(),
+      home: QuizHomeView(),
       onGenerateRoute: RouteGenerator.generateRoute,
     );
   }

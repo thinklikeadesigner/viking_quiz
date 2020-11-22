@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/bubble_type.dart';
 import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_2.dart';
+import 'package:navigationapp/app.dart';
 import 'package:navigationapp/widgets/chat_bubbles.dart';
 import 'package:preview/preview.dart';
-import 'package:uic/step_indicator.dart';
 
 class SecondPage extends StatelessWidget with Previewer {
   @override
@@ -12,36 +12,57 @@ class SecondPage extends StatelessWidget with Previewer {
       // appBar: AppBar(
       //   title: Text('hello'),
       // ),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Image(image: AssetImage("panda.png"), height: 150),
-            StepIndicator(
-              selectedStepIndex: 1,
-              totalSteps: 4,
-              selectedStep: Icon(
-                Icons.radio_button_checked,
-                color: Theme.of(context).accentColor,
-              ),
-              completedStep: Icon(
-                Icons.check_circle,
-                color: Theme.of(context).primaryColor,
-              ),
-              incompleteStep: Icon(
-                Icons.radio_button_unchecked,
-                color: Theme.of(context).primaryColor,
-              ),
+      body: Column(
+        children: <Widget>[
+          Card(
+            child: Row(
+              children: [
+                Container(
+                  margin: const EdgeInsets.fromLTRB(20, 48, 20, 20),
+                  child: Image(image: AssetImage("panda.png"), height: 120),
+                ),
+                pickActivityBubble(
+                    ChatBubbleClipper2(type: BubbleType.receiverBubble),
+                    context),
+              ],
             ),
-            firstChatBubble(
-                ChatBubbleClipper2(type: BubbleType.receiverBubble), context),
-            secondChatBubble(
-                ChatBubbleClipper2(type: BubbleType.receiverBubble), context),
-            SizedBox(
-              height: 30,
-            ),
-          ],
+          ),
+          // Expanded(child: CheckTile()),
+        ],
+      ),
+      bottomSheet: Container(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            FlatButton(
+                child: Text(
+                  'Skip',
+                  style: TextStyle(color: Colors.black),
+                ),
+                splashColor: primaryTeal,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                    side: BorderSide(color: Colors.black)),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/choosename');
+                }),
+            FlatButton(
+                child: Text(
+                  'Save Activities',
+                  style: TextStyle(color: Colors.white),
+                ),
+                color: primaryTeal,
+                splashColor: primaryTeal,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/choosename');
+                }),
+          ]),
         ),
+        color: Colors.white,
       ),
     );
   }

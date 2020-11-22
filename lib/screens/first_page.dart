@@ -75,9 +75,9 @@ class FirstPage extends StatelessWidget with Previewer {
                 },
               ),
               RaisedButton(
-                child: Text('Pick work time'),
+                child: Text('quizhomeview'),
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/pickworktime');
+                  Navigator.of(context).pushNamed('/quizhomeview');
                 },
               ),
               // RaisedButton(

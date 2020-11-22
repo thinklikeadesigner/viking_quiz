@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:navigationapp/screens/onboarding_screens/choose_name.dart';
 import 'package:navigationapp/screens/error_route_page.dart';
 import 'package:navigationapp/screens/onboarding_screens/choose_lunch_time.dart';
 import 'package:navigationapp/screens/onboarding_screens/choose_work_time.dart';
-import 'package:navigationapp/screens/choose_activity.dart';
+
 import 'package:navigationapp/screens/first_page.dart';
 import 'package:navigationapp/screens/onboarding_screens/milo_name_picked.dart';
 import 'package:navigationapp/screens/onboarding_screens/onboarding_start.dart';
@@ -38,6 +39,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => ChooseWorkTime());
       case '/picklunchtime':
         return MaterialPageRoute(builder: (_) => ChooseLunchTime());
+      // case '/quizhomeview':
+      //   return MaterialPageRoute(builder: (_) => QuizHomeView());
       default:
         return MaterialPageRoute(builder: (_) => ErrorRoutePage());
     }
