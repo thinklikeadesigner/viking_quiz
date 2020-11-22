@@ -1,9 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
-import 'package:navigationapp/app.dart';
+
 import 'package:navigationapp/models/viking_quiz_model.dart';
 
 final VikingQuizModel model = VikingQuizModel();
+
+pickActivityBubble(CustomClipper clipper, BuildContext context) => ChatBubble(
+      clipper: clipper,
+      backGroundColor: Color(0xffE7E7ED),
+      margin: EdgeInsets.only(top: 5),
+      child: Container(
+        constraints: BoxConstraints(
+          maxWidth: MediaQuery.of(context).size.width * 0.45,
+        ),
+        child: Text(
+          model.getQuestionText(),
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 18.0,
+            color: Color(0xffE7E7ED),
+          ),
+        ),
+      ),
+    );
 
 firstChatBubble(CustomClipper clipper, BuildContext context) => ChatBubble(
       clipper: clipper,
@@ -70,7 +89,7 @@ milo(CustomClipper clipper, BuildContext context) => ChatBubble(
       clipper: clipper,
       alignment: Alignment.topRight,
       margin: EdgeInsets.only(top: 20),
-      backGroundColor: purpleMessage,
+      backGroundColor: Colors.purple,
       child: Container(
         constraints: BoxConstraints(
           maxWidth: MediaQuery.of(context).size.width * 0.7,
@@ -116,7 +135,7 @@ sky(CustomClipper clipper, BuildContext context) => ChatBubble(
       clipper: clipper,
       alignment: Alignment.topRight,
       margin: EdgeInsets.only(top: 20),
-      backGroundColor: purpleMessage,
+      backGroundColor: Colors.purple,
       child: Container(
         constraints: BoxConstraints(
           maxWidth: MediaQuery.of(context).size.width * 0.7,
@@ -139,25 +158,6 @@ imSky(CustomClipper clipper, BuildContext context) => ChatBubble(
         child: Text(
           "Hi! I'm Sky.",
           style: TextStyle(color: Colors.black),
-        ),
-      ),
-    );
-
-pickActivityBubble(CustomClipper clipper, BuildContext context) => ChatBubble(
-      clipper: clipper,
-      backGroundColor: Color(0xffE7E7ED),
-      margin: EdgeInsets.only(top: 5),
-      child: Container(
-        constraints: BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width * 0.45,
-        ),
-        child: Text(
-          model.getQuestionText(),
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 18.0,
-            color: Colors.blueGrey,
-          ),
         ),
       ),
     );
