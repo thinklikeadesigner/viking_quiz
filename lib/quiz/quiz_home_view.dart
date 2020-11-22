@@ -1,8 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/bubble_type.dart';
+import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_2.dart';
 import 'package:navigationapp/models/viking_quiz_model.dart';
 import 'package:navigationapp/widgets/chat_bubbles.dart';
+
+pickActivityBubble(CustomClipper clipper, BuildContext context) => ChatBubble(
+      clipper: clipper,
+      backGroundColor: Color(0xffE7E7ED),
+      margin: EdgeInsets.only(top: 5),
+      child: Container(
+        constraints: BoxConstraints(
+          maxWidth: MediaQuery.of(context).size.width * 0.45,
+        ),
+        child: Text(
+          model.getQuestionText(),
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 18.0,
+            color: Colors.blueGrey,
+          ),
+        ),
+      ),
+    );
 
 class QuizHomeView extends StatefulWidget {
   QuizHomeView({Key key, this.title}) : super(key: key);

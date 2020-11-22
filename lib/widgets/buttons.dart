@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../app.dart';
-
 class OnboardingSkipButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton(
         child: Text('Skip'),
-        splashColor: primaryTeal,
+        splashColor: Colors.purple,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(18.0),
             side: BorderSide(color: Colors.black)),
@@ -25,8 +23,8 @@ class OnboardingLetsDoItButton extends StatelessWidget {
           'Let\'s do it!',
           style: TextStyle(color: Colors.white),
         ),
-        color: primaryTeal,
-        splashColor: primaryTeal,
+        color: Colors.purple,
+        splashColor: Colors.purple,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18.0),
         ),
@@ -41,7 +39,7 @@ class SkipActivitiesButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
         child: Text('Skip'),
-        splashColor: primaryTeal,
+        splashColor: Colors.purple,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(18.0),
             side: BorderSide(color: Colors.black)),
@@ -56,7 +54,7 @@ class SkipActivities extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
         child: Text('Skip and surprise me'),
-        splashColor: primaryTeal,
+        splashColor: Colors.purple,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(18.0),
             side: BorderSide(color: Colors.black)),
@@ -71,7 +69,7 @@ class SkipChooseName extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
         child: Text('Skip'),
-        splashColor: primaryTeal,
+        splashColor: Colors.purple,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(18.0),
             side: BorderSide(color: Colors.black)),
@@ -89,8 +87,8 @@ class MiloNameButton extends StatelessWidget {
           'Milo!',
           style: TextStyle(color: Colors.white),
         ),
-        color: primaryTeal,
-        splashColor: primaryTeal,
+        color: Colors.purple,
+        splashColor: Colors.purple,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18.0),
         ),
@@ -108,8 +106,8 @@ class SkyNameButton extends StatelessWidget {
           'Sky!',
           style: TextStyle(color: Colors.white),
         ),
-        color: primaryTeal,
-        splashColor: primaryTeal,
+        color: Colors.purple,
+        splashColor: Colors.purple,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18.0),
         ),
@@ -127,8 +125,8 @@ class PickActivities extends StatelessWidget {
           'Let\s do it!',
           style: TextStyle(color: Colors.white),
         ),
-        color: primaryTeal,
-        splashColor: primaryTeal,
+        color: Colors.purple,
+        splashColor: Colors.purple,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18.0),
         ),
@@ -146,8 +144,8 @@ class PickBuddy extends StatelessWidget {
           'Let\s do it!',
           style: TextStyle(color: Colors.white),
         ),
-        color: primaryTeal,
-        splashColor: primaryTeal,
+        color: Colors.purple,
+        splashColor: Colors.purple,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18.0),
         ),

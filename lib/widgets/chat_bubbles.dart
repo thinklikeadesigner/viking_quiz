@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
-import 'package:navigationapp/app.dart';
+
 import 'package:navigationapp/models/viking_quiz_model.dart';
 
 final VikingQuizModel model = VikingQuizModel();
@@ -70,7 +70,7 @@ milo(CustomClipper clipper, BuildContext context) => ChatBubble(
       clipper: clipper,
       alignment: Alignment.topRight,
       margin: EdgeInsets.only(top: 20),
-      backGroundColor: purpleMessage,
+      backGroundColor: Colors.purple,
       child: Container(
         constraints: BoxConstraints(
           maxWidth: MediaQuery.of(context).size.width * 0.7,
@@ -116,7 +116,7 @@ sky(CustomClipper clipper, BuildContext context) => ChatBubble(
       clipper: clipper,
       alignment: Alignment.topRight,
       margin: EdgeInsets.only(top: 20),
-      backGroundColor: purpleMessage,
+      backGroundColor: Colors.purple,
       child: Container(
         constraints: BoxConstraints(
           maxWidth: MediaQuery.of(context).size.width * 0.7,
