@@ -53,6 +53,8 @@ flutter:
   assets:
     - google_logo.png
     - panda.png
+    - dash.png
+    - dassh.png
 
 
   #   - images/a_dot_ham.jpeg

@@ -65,11 +65,12 @@ class _MyHomePageState extends State<QuizHomeView> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Card(
+              color: Colors.blueGrey,
               child: Row(
                 children: [
                   Container(
                     margin: const EdgeInsets.fromLTRB(20, 48, 20, 20),
-                    child: Image(image: AssetImage("panda.png"), height: 120),
+                    child: Image(image: AssetImage("dassh.png"), height: 120),
                   ),
                   pickActivityBubble(
                       ChatBubbleClipper2(type: BubbleType.receiverBubble),
@@ -81,16 +82,6 @@ class _MyHomePageState extends State<QuizHomeView> {
               flex: 5,
               child: Padding(
                 padding: EdgeInsets.all(10.0),
-                child: Center(
-                  child: Text(
-                    model.getQuestionText(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 25.0,
-                      color: Colors.white70,
-                    ),
-                  ),
-                ),
               ),
             ),
             Expanded(
