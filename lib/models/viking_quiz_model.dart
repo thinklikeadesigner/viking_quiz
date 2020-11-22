@@ -1,7 +1,9 @@
 import 'question.dart';
 
 class VikingQuizModel {
+  final int _kQuizThreshold = 4;
   int _questionNumber = 0;
+  int _totalCorrectAnswers = 0;
 
   List<Question> _questionBank = [
     Question(
@@ -41,6 +43,18 @@ class VikingQuizModel {
     return _questionBank[_questionNumber].answer;
   }
 
+  int getTotalCorrectAnswers() {
+    return _totalCorrectAnswers;
+  }
+
+  int getCurrentQuestionNumber() {
+    return _questionNumber;
+  }
+
+  void questionAnsweredCorrectly() {
+    _totalCorrectAnswers++;
+  }
+
   bool isFinished() {
     if (_questionNumber >= _questionBank.length - 1) {
       print('Now returning true');
@@ -52,6 +66,11 @@ class VikingQuizModel {
 
   void reset() {
     _questionNumber = 0;
+    _totalCorrectAnswers = 0;
+  }
+
+  bool judgeQuiz() {
+    return _totalCorrectAnswers > _kQuizThreshold;
   }
 }
 

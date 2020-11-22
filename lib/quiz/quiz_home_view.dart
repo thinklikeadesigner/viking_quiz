@@ -3,6 +3,7 @@ import 'package:flutter_chat_bubble/bubble_type.dart';
 import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_2.dart';
 import 'package:navigationapp/models/viking_quiz_model.dart';
 import 'package:navigationapp/widgets/chat_bubbles.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class QuizHomeView extends StatefulWidget {
   QuizHomeView({Key key, this.title}) : super(key: key);
@@ -20,20 +21,29 @@ class _MyHomePageState extends State<QuizHomeView> {
 
   void checkAnswer(bool userPickedAnswer) {
     bool correctAnswer = model.getCorrectAnswer();
+    int totalCorrectCount = model.getTotalCorrectAnswers();
 
     setState(() {
+      String passFail = 'failed';
+      if (model.judgeQuiz()) {
+        passFail = 'passed';
+      }
+      String quizResultsMessage =
+          'You answered $totalCorrectCount questions correctly. You have $passFail the quiz!';
+
       if (model.isFinished() == true) {
-        /*Alert(
+        Alert(
           context: context,
           title: 'Finished!',
-          desc: 'You\'ve reached the end of the quiz.',
-        ).show();*/
+          desc: quizResultsMessage,
+        ).show();
 
         model.reset();
-
         scoreKeeper = [];
       } else {
         if (userPickedAnswer == correctAnswer) {
+          model.questionAnsweredCorrectly();
+
           scoreKeeper.add(Icon(
             Icons.check,
             color: Colors.green,
@@ -51,7 +61,13 @@ class _MyHomePageState extends State<QuizHomeView> {
 
   @override
   Widget build(BuildContext context) {
-    print("model: ");
+    print("current question number: ");
+    print(model.getCurrentQuestionNumber());
+
+    print("total correct answers: ");
+    print(model.getTotalCorrectAnswers());
+
+    print("question text: ");
     print(model.getQuestionText());
     var text = model.getQuestionText();
     return Scaffold(
