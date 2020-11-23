@@ -61,14 +61,6 @@ class _MyHomePageState extends State<QuizHomeView> {
 
   @override
   Widget build(BuildContext context) {
-    print("current question number: ");
-    print(model.getCurrentQuestionNumber());
-
-    print("total correct answers: ");
-    print(model.getTotalCorrectAnswers());
-
-    print("question text: ");
-    print(model.getQuestionText());
     var text = model.getQuestionText();
     return Scaffold(
       backgroundColor: Colors.grey.shade900,
@@ -112,7 +104,6 @@ class _MyHomePageState extends State<QuizHomeView> {
                     ),
                   ),
                   onPressed: () {
-                    //The user picked true.
                     checkAnswer(true);
                   },
                 ),

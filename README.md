@@ -1,17 +1,14 @@
 # viking_quiz
 
-Viking quiz
+Flutter Viking Conference Hackathon Submission.
 
-## Getting Started
+Project created by Rebecca Burch and Sean Moore.
 
-This project is a starting point for a Flutter application.
+This is a quiz application that contains Nordic questions. The graphics were tailored to match
+the viking theme of the conference.
 
-A few resources to get you started if this is your first Flutter project:
+Rebecca was instrumental in taking command of the user interface design, coding and implementation.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Sean helped with project code structure and a basic architecture to help organize the codebase.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 

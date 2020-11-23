@@ -1,39 +1,18 @@
-// import 'package:navigationapp/quiz/quiz_home_view.dart';
-// import 'package:navigationapp/route_generator/route_generator.dart';
-// import 'package:preview/preview.dart';
+import 'package:flutter/material.dart';
 
-// import 'package:flutter/material.dart';
+import 'quiz/quiz_home_view.dart';
 
-// const primaryTeal = const Color((0xff30D4D4));
-// const purpleMessage = const Color(0xff79227B);
-
-// class App extends StatelessWidget with Previewer {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Navigation Demo',
-//       theme: ThemeData(
-//         visualDensity: VisualDensity.adaptivePlatformDensity,
-//         // Define the default brightness and colors.
-//         brightness: Brightness.light,
-//         primaryColor: primaryTeal,
-//         accentColor: Colors.cyan[600],
-
-//         // Define the default font family.
-//         fontFamily: 'Georgia',
-
-//         // Define the default TextTheme. Use this to specify the default
-//         // text styling for headlines, titles, bodies of text, and more.
-//         textTheme: TextTheme(
-//           headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-//           headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-//           bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
-//         ),
-//       ),
-//       home: QuizHomeView(),
-//       onGenerateRoute: RouteGenerator.generateRoute,
-//     );
-//   }
-// }
-
-// // 30D4D4
+class App extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Viking Quiz',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: QuizHomeView(title: 'Flutter Viking Quiz'),
+    );
+  }
+}

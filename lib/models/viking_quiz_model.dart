@@ -8,12 +8,8 @@ class VikingQuizModel {
   List<Question> _questionBank = [
     Question(
         'The name of the first human being in Norse mythology is Ake.', false),
-//    "correct_answer": "Ask",
-
     Question(
         'Hel was the daughter of the Norse Mythological figure, Loki', true),
-//    "correct_answer": "Loki",
-
     Question('According to Norse mythology, Loki is a mother.', true),
     Question(
         'In Norse mythology, Nidhogg is the name of the serpent which eats the roots of the ash tree Yggdrasil',
@@ -21,7 +17,6 @@ class VikingQuizModel {
     Question(
         'The Norse god Odin has two pet crows named "Huginn" and "Muninn".  Their names mean "Sleeping" and "Waking"',
         false),
-    // correct answer "Thought &amp; Memory",
     Question('The Norse God, Odin, has a horse named Sleipnir.', true),
     Question(
         'The immense structure referred to in Norse Mythology as the Yggdrasil is a tree.',
@@ -73,12 +68,3 @@ class VikingQuizModel {
     return _totalCorrectAnswers > _kQuizThreshold;
   }
 }
-
-// Stack(
-//                   children: <Widget>[
-//                     pickActivityBubble(
-//                     ChatBubbleClipper2(type: BubbleType.receiverBubble),
-//                     context),
-//                     Text('hi', style: (TextStyle(color: Colors.white))),
-//                   ],
-//                 ),
