@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/bubble_type.dart';
 import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_2.dart';
 import 'package:navigationapp/models/viking_quiz_model.dart';
+import 'package:navigationapp/screens/results_page.dart';
 import 'package:navigationapp/widgets/chat_bubbles.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
@@ -32,11 +33,24 @@ class _MyHomePageState extends State<QuizHomeView> {
           'You answered $totalCorrectCount questions correctly. You have $passFail the quiz!';
 
       if (model.isFinished() == true) {
-        Alert(
-          context: context,
-          title: 'Finished!',
-          desc: quizResultsMessage,
-        ).show();
+        void _sendDataToSecondScreen(BuildContext context) {
+          String textToSend = quizResultsMessage;
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ResultsPage(
+                  text: textToSend,
+                ),
+              ));
+        }
+
+        _sendDataToSecondScreen(context);
+
+        // Alert(
+        //   context: context,
+        //   title: 'Finished!',
+        //   desc: quizResultsMessage,
+        // ).show();
 
         model.reset();
         scoreKeeper = [];
